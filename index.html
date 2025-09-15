@@ -85,17 +85,75 @@
     <button onclick="showSection('powerbi')">Power BI</button>
   </nav>
 
-  <section id="excel" class="section active">
-    <h2>📊 Fórmulas más utilizadas en Excel</h2>
-    <p>Excel es una herramienta poderosa para organizar, analizar y visualizar datos. Aquí tienes algunas de las fórmulas más comunes:</p>
-    <ul>
-      <li><strong>SUMA:</strong> =SUMA(A1:A10)</li>
-      <li><strong>SI:</strong> =SI(A1>10, "Mayor", "Menor")</li>
-      <li><strong>BUSCARV:</strong> =BUSCARV("Producto", A2:B10, 2, FALSO)</li>
-      <li><strong>CONCATENAR:</strong> =CONCATENAR(A1, " ", B1)</li>
-      <li><strong>CONTAR.SI:</strong> =CONTAR.SI(A1:A10, ">5")</li>
-    </ul>
-  </section>
+ <section id="excel" class="section active">
+  <h2>📊 Fórmulas más utilizadas en Excel</h2>
+  <p>Excel es una herramienta poderosa para organizar, analizar y visualizar datos. Aquí tienes las fórmulas básicas e intermedias más comunes, agrupadas por categoría:</p>
+
+  <h3>🧮 Funciones Matemáticas y Aritméticas</h3>
+  <ul>
+    <li><strong>SUMA:</strong> =SUMA(A1:A10)</li>
+    <li><strong>RESTA:</strong> =A1-A2</li>
+    <li><strong>MULTIPLICAR:</strong> =A1*A2</li>
+    <li><strong>DIVIDIR:</strong> =A1/A2</li>
+    <li><strong>PROMEDIO:</strong> =PROMEDIO(A1:A10)</li>
+    <li><strong>MAX:</strong> =MAX(A1:A10)</li>
+    <li><strong>MIN:</strong> =MIN(A1:A10)</li>
+    <li><strong>REDONDEAR:</strong> =REDONDEAR(A1,2)</li>
+    <li><strong>ABS:</strong> =ABS(A1)</li>
+    <li><strong>POTENCIA:</strong> =POTENCIA(A1,2)</li>
+  </ul>
+
+  <h3>🔤 Funciones de Texto</h3>
+  <ul>
+    <li><strong>CONCATENAR:</strong> =CONCATENAR(A1, " ", B1)</li>
+    <li><strong>IZQUIERDA:</strong> =IZQUIERDA(A1,5)</li>
+    <li><strong>DERECHA:</strong> =DERECHA(A1,3)</li>
+    <li><strong>LARGO:</strong> =LARGO(A1)</li>
+    <li><strong>ESPACIOS:</strong> =ESPACIOS(A1)</li>
+    <li><strong>MINUSC:</strong> =MINUSC(A1)</li>
+    <li><strong>MAYUSC:</strong> =MAYUSC(A1)</li>
+    <li><strong>NOMPROPIO:</strong> =NOMPROPIO(A1)</li>
+    <li><strong>HALLAR:</strong> =HALLAR("texto",A1)</li>
+    <li><strong>REEMPLAZAR:</strong> =REEMPLAZAR(A1,1,5,"nuevo")</li>
+  </ul>
+
+  <h3>🧠 Funciones Lógicas</h3>
+  <ul>
+    <li><strong>SI:</strong> =SI(A1>10, "Mayor", "Menor")</li>
+    <li><strong>Y:</strong> =Y(A1>10,B1<5)</li>
+    <li><strong>O:</strong> =O(A1>10,B1<5)</li>
+    <li><strong>NO:</strong> =NO(A1>10)</li>
+    <li><strong>SI.ERROR:</strong> =SI.ERROR(A1/B1, "Error")</li>
+  </ul>
+
+  <h3>🔍 Funciones de Búsqueda y Referencia</h3>
+  <ul>
+    <li><strong>BUSCARV:</strong> =BUSCARV("Producto", A2:B10, 2, FALSO)</li>
+    <li><strong>BUSCARH:</strong> =BUSCARH("Ventas", A1:D5, 2, FALSO)</li>
+    <li><strong>INDICE:</strong> =INDICE(A2:A10,3)</li>
+    <li><strong>COINCIDIR:</strong> =COINCIDIR("Juan",A2:A10,0)</li>
+    <li><strong>DESREF:</strong> =DESREF(A1,2,1)</li>
+  </ul>
+
+  <h3>📅 Funciones de Fecha y Hora</h3>
+  <ul>
+    <li><strong>HOY:</strong> =HOY()</li>
+    <li><strong>AHORA:</strong> =AHORA()</li>
+    <li><strong>DÍA:</strong> =DÍA(A1)</li>
+    <li><strong>MES:</strong> =MES(A1)</li>
+    <li><strong>AÑO:</strong> =AÑO(A1)</li>
+    <li><strong>FECHA:</strong> =FECHA(2025,9,15)</li>
+    <li><strong>DIAS:</strong> =DIAS(A1,B1)</li>
+  </ul>
+
+  <h3>📊 Funciones Estadísticas Básicas</h3>
+  <ul>
+    <li><strong>CONTAR:</strong> =CONTAR(A1:A10)</li>
+    <li><strong>CONTAR.SI:</strong> =CONTAR.SI(A1:A10, ">5")</li>
+    <li><strong>CONTAR.BLANK:</strong> =CONTAR.BLANK(A1:A10)</li>
+    <li><strong>FRECUENCIA:</strong> =FRECUENCIA(datos,intervalos)</li>
+  </ul>
+</section>
 
   <section id="powerbi" class="section">
     <h2>📈 Fórmulas más utilizadas en Power BI (DAX)</h2>
