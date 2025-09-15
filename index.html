@@ -256,6 +256,26 @@
       document.getElementById(id).classList.add('active');
     }
   </script>
+
+<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #2c3e50; color: white; padding: 1rem; text-align: center; z-index: 999;">
+  Este sitio utiliza cookies para mejorar tu experiencia. 
+  <button onclick="acceptCookies()" style="margin-left: 1rem; background: #1abc9c; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Aceptar</button>
+</div>
+
+<script>
+  function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+  }
+
+  window.onload = function() {
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  };
+</script>
+
+
 </body>
 </html>
 
