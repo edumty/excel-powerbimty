@@ -56,6 +56,11 @@
       color: #2c3e50;
     }
 
+    h3 {
+      margin-top: 2rem;
+      color: #34495e;
+    }
+
     ul {
       list-style: none;
       padding: 0;
@@ -66,6 +71,14 @@
       margin: 0.5rem 0;
       padding: 0.75rem;
       border-left: 5px solid #1abc9c;
+    }
+
+    ul li em {
+      display: block;
+      margin-top: 0.3rem;
+      color: #555;
+      font-style: normal;
+      font-size: 0.95rem;
     }
 
     @keyframes fadeIn {
@@ -85,144 +98,78 @@
     <button onclick="showSection('powerbi')">Power BI</button>
   </nav>
 
- <section id="excel" class="section active">
-  <h2>📊 Fórmulas más utilizadas en Excel</h2>
-  <p>Excel es una herramienta poderosa para organizar, analizar y visualizar datos. Aquí tienes las fórmulas básicas e intermedias más comunes, agrupadas por categoría:</p>
+  <section id="excel" class="section active">
+    <h2>📊 Fórmulas más utilizadas en Excel</h2>
+    <p>Las siguientes fórmulas están organizadas por tipo y acompañadas de una breve descripción para que comprendas su utilidad.</p>
 
-  <h3>🧮 Funciones Matemáticas y Aritméticas</h3>
-  <ul>
-    <li><strong>SUMA:</strong> =SUMA(A1:A10)</li>
-    <li><strong>RESTA:</strong> =A1-A2</li>
-    <li><strong>MULTIPLICAR:</strong> =A1*A2</li>
-    <li><strong>DIVIDIR:</strong> =A1/A2</li>
-    <li><strong>PROMEDIO:</strong> =PROMEDIO(A1:A10)</li>
-    <li><strong>MAX:</strong> =MAX(A1:A10)</li>
-    <li><strong>MIN:</strong> =MIN(A1:A10)</li>
-    <li><strong>REDONDEAR:</strong> =REDONDEAR(A1,2)</li>
-    <li><strong>ABS:</strong> =ABS(A1)</li>
-    <li><strong>POTENCIA:</strong> =POTENCIA(A1,2)</li>
-  </ul>
+    <h3>🧮 Funciones Matemáticas y Aritméticas</h3>
+    <ul>
+      <li><strong>SUMA:</strong> =SUMA(A1:A10)<em>Suma todos los valores dentro del rango A1 a A10.</em></li>
+      <li><strong>RESTA:</strong> =A1-A2<em>Resta el valor de la celda A2 al de A1.</em></li>
+      <li><strong>MULTIPLICAR:</strong> =A1*A2<em>Multiplica los valores de las celdas A1 y A2.</em></li>
+      <li><strong>DIVIDIR:</strong> =A1/A2<em>Divide el valor de A1 entre el de A2.</em></li>
+      <li><strong>PROMEDIO:</strong> =PROMEDIO(A1:A10)<em>Calcula la media aritmética del rango.</em></li>
+      <li><strong>MAX:</strong> =MAX(A1:A10)<em>Devuelve el valor máximo del rango.</em></li>
+      <li><strong>MIN:</strong> =MIN(A1:A10)<em>Devuelve el valor mínimo del rango.</em></li>
+      <li><strong>REDONDEAR:</strong> =REDONDEAR(A1,2)<em>Redondea el valor de A1 a 2 decimales.</em></li>
+      <li><strong>ABS:</strong> =ABS(A1)<em>Devuelve el valor absoluto de A1.</em></li>
+      <li><strong>POTENCIA:</strong> =POTENCIA(A1,2)<em>Eleva el valor de A1 al cuadrado.</em></li>
+    </ul>
 
-  <h3>🔤 Funciones de Texto</h3>
-  <ul>
-    <li><strong>CONCATENAR:</strong> =CONCATENAR(A1, " ", B1)</li>
-    <li><strong>IZQUIERDA:</strong> =IZQUIERDA(A1,5)</li>
-    <li><strong>DERECHA:</strong> =DERECHA(A1,3)</li>
-    <li><strong>LARGO:</strong> =LARGO(A1)</li>
-    <li><strong>ESPACIOS:</strong> =ESPACIOS(A1)</li>
-    <li><strong>MINUSC:</strong> =MINUSC(A1)</li>
-    <li><strong>MAYUSC:</strong> =MAYUSC(A1)</li>
-    <li><strong>NOMPROPIO:</strong> =NOMPROPIO(A1)</li>
-    <li><strong>HALLAR:</strong> =HALLAR("texto",A1)</li>
-    <li><strong>REEMPLAZAR:</strong> =REEMPLAZAR(A1,1,5,"nuevo")</li>
-  </ul>
+    <h3>🔤 Funciones de Texto</h3>
+    <ul>
+      <li><strong>CONCATENAR:</strong> =CONCATENAR(A1, " ", B1)<em>Une el contenido de A1 y B1 con un espacio.</em></li>
+      <li><strong>IZQUIERDA:</strong> =IZQUIERDA(A1,5)<em>Extrae los primeros 5 caracteres de A1.</em></li>
+      <li><strong>DERECHA:</strong> =DERECHA(A1,3)<em>Extrae los últimos 3 caracteres de A1.</em></li>
+      <li><strong>LARGO:</strong> =LARGO(A1)<em>Cuenta el número de caracteres en A1.</em></li>
+      <li><strong>ESPACIOS:</strong> =ESPACIOS(A1)<em>Elimina espacios innecesarios en A1.</em></li>
+      <li><strong>MINUSC:</strong> =MINUSC(A1)<em>Convierte el texto de A1 a minúsculas.</em></li>
+      <li><strong>MAYUSC:</strong> =MAYUSC(A1)<em>Convierte el texto de A1 a mayúsculas.</em></li>
+      <li><strong>NOMPROPIO:</strong> =NOMPROPIO(A1)<em>Convierte el texto de A1 a formato de nombre propio.</em></li>
+      <li><strong>HALLAR:</strong> =HALLAR("texto",A1)<em>Devuelve la posición del texto buscado dentro de A1.</em></li>
+      <li><strong>REEMPLAZAR:</strong> =REEMPLAZAR(A1,1,5,"nuevo")<em>Reemplaza parte del texto en A1 por "nuevo".</em></li>
+    </ul>
 
-  <h3>🧠 Funciones Lógicas</h3>
-  <ul>
-    <li><strong>SI:</strong> =SI(A1>10, "Mayor", "Menor")</li>
-    <li><strong>Y:</strong> =Y(A1>10,B1<5)</li>
-    <li><strong>O:</strong> =O(A1>10,B1<5)</li>
-    <li><strong>NO:</strong> =NO(A1>10)</li>
-    <li><strong>SI.ERROR:</strong> =SI.ERROR(A1/B1, "Error")</li>
-  </ul>
+    <h3>🧠 Funciones Lógicas</h3>
+    <ul>
+      <li><strong>SI:</strong> =SI(A1>10, "Mayor", "Menor")<em>Evalúa si A1 es mayor que 10 y devuelve "Mayor" o "Menor".</em></li>
+      <li><strong>Y:</strong> =Y(A1>10,B1<5)<em>Devuelve VERDADERO si ambas condiciones se cumplen.</em></li>
+      <li><strong>O:</strong> =O(A1>10,B1<5)<em>Devuelve VERDADERO si al menos una condición se cumple.</em></li>
+      <li><strong>NO:</strong> =NO(A1>10)<em>Invierte el resultado lógico de la condición.</em></li>
+      <li><strong>SI.ERROR:</strong> =SI.ERROR(A1/B1, "Error")<em>Devuelve "Error" si la fórmula genera un error.</em></li>
+    </ul>
 
-  <h3>🔍 Funciones de Búsqueda y Referencia</h3>
-  <ul>
-    <li><strong>BUSCARV:</strong> =BUSCARV("Producto", A2:B10, 2, FALSO)</li>
-    <li><strong>BUSCARH:</strong> =BUSCARH("Ventas", A1:D5, 2, FALSO)</li>
-    <li><strong>INDICE:</strong> =INDICE(A2:A10,3)</li>
-    <li><strong>COINCIDIR:</strong> =COINCIDIR("Juan",A2:A10,0)</li>
-    <li><strong>DESREF:</strong> =DESREF(A1,2,1)</li>
-  </ul>
+    <h3>🔍 Funciones de Búsqueda y Referencia</h3>
+    <ul>
+      <li><strong>BUSCARV:</strong> =BUSCARV("Producto", A2:B10, 2, FALSO)<em>Busca "Producto" en la primera columna y devuelve el valor de la segunda.</em></li>
+      <li><strong>BUSCARH:</strong> =BUSCARH("Ventas", A1:D5, 2, FALSO)<em>Busca horizontalmente en la fila superior.</em></li>
+      <li><strong>INDICE:</strong> =INDICE(A2:A10,3)<em>Devuelve el valor en la tercera posición del rango.</em></li>
+      <li><strong>COINCIDIR:</strong> =COINCIDIR("Juan",A2:A10,0)<em>Devuelve la posición de "Juan" en el rango.</em></li>
+      <li><strong>DESREF:</strong> =DESREF(A1,2,1)<em>Devuelve el valor desplazado 2 filas abajo y 1 columna a la derecha desde A1.</em></li>
+    </ul>
 
-  <h3>📅 Funciones de Fecha y Hora</h3>
-  <ul>
-    <li><strong>HOY:</strong> =HOY()</li>
-    <li><strong>AHORA:</strong> =AHORA()</li>
-    <li><strong>DÍA:</strong> =DÍA(A1)</li>
-    <li><strong>MES:</strong> =MES(A1)</li>
-    <li><strong>AÑO:</strong> =AÑO(A1)</li>
-    <li><strong>FECHA:</strong> =FECHA(2025,9,15)</li>
-    <li><strong>DIAS:</strong> =DIAS(A1,B1)</li>
-  </ul>
+      <h3>📅 Funciones de Fecha y Hora</h3>
+    <ul>
+      <li><strong>HOY:</strong> =HOY()<em>Devuelve la fecha actual del sistema.</em></li>
+      <li><strong>AHORA:</strong> =AHORA()<em>Devuelve la fecha y hora actual.</em></li>
+      <li><strong>DÍA:</strong> =DÍA(A1)<em>Extrae el día de una fecha en A1.</em></li>
+      <li><strong>MES:</strong> =MES(A1)<em>Extrae el mes de una fecha en A1.</em></li>
+      <li><strong>AÑO:</strong> =AÑO(A1)<em>Extrae el año de una fecha en A1.</em></li>
+      <li><strong>FECHA:</strong> =FECHA(2025,9,15)<em>Construye una fecha con día, mes y año específicos.</em></li>
+      <li><strong>DIAS:</strong> =DIAS(A1,B1)<em>Calcula la cantidad de días entre dos fechas.</em></li>
+    </ul>
 
-  <h3>📊 Funciones Estadísticas Básicas</h3>
-  <ul>
-    <li><strong>CONTAR:</strong> =CONTAR(A1:A10)</li>
-    <li><strong>CONTAR.SI:</strong> =CONTAR.SI(A1:A10, ">5")</li>
-    <li><strong>CONTAR.BLANK:</strong> =CONTAR.BLANK(A1:A10)</li>
-    <li><strong>FRECUENCIA:</strong> =FRECUENCIA(datos,intervalos)</li>
-  </ul>
-</section>
-
- <section id="powerbi" class="section">
-  <h2>📈 Fórmulas más utilizadas en Power BI (DAX)</h2>
-  <p>Power BI te permite crear dashboards interactivos y realizar análisis avanzados. Estas son algunas de las fórmulas DAX más comunes, organizadas por categoría:</p>
-
-  <h3>🧮 Funciones de Agregación</h3>
-  <ul>
-    <li><strong>SUM:</strong> SUM(Ventas[Total])</li>
-    <li><strong>SUMX:</strong> SUMX(Ventas, Ventas[Precio] * Ventas[Cantidad])</li>
-    <li><strong>AVERAGE:</strong> AVERAGE(Ventas[Total])</li>
-    <li><strong>AVERAGEX:</strong> AVERAGEX(Ventas, Ventas[Total])</li>
-    <li><strong>MAX / MIN:</strong> MAX(Ventas[Total]) / MIN(Ventas[Total])</li>
-  </ul>
-
-  <h3>🔤 Funciones de Texto</h3>
-  <ul>
-    <li><strong>CONCATENATE:</strong> CONCATENATE(Clientes[Nombre], " ", Clientes[Apellido])</li>
-    <li><strong>LEFT / RIGHT:</strong> LEFT(Clientes[Nombre], 3) / RIGHT(Clientes[Nombre], 2)</li>
-    <li><strong>LEN:</strong> LEN(Clientes[Nombre])</li>
-    <li><strong>UPPER / LOWER:</strong> UPPER(Clientes[Nombre]) / LOWER(Clientes[Nombre])</li>
-    <li><strong>REPLACE:</strong> REPLACE(Clientes[Nombre], 1, 3, "XXX")</li>
-  </ul>
-
-  <h3>🧠 Funciones Lógicas</h3>
-  <ul>
-    <li><strong>IF:</strong> IF(Ventas[Total] > 5000, "Alto", "Bajo")</li>
-    <li><strong>AND:</strong> AND(Ventas[Total] > 1000, Ventas[Cantidad] > 5)</li>
-    <li><strong>OR:</strong> OR(Ventas[Región] = "Norte", Ventas[Región] = "Sur")</li>
-    <li><strong>NOT:</strong> NOT(Ventas[Cantidad] > 10)</li>
-    <li><strong>IFERROR:</strong> IFERROR(Ventas[Total] / Ventas[Cantidad], 0)</li>
-  </ul>
-
-  <h3>🔍 Funciones de Filtro y Contexto</h3>
-  <ul>
-    <li><strong>CALCULATE:</strong> CALCULATE(SUM(Ventas[Total]), Ventas[Región] = "Norte")</li>
-    <li><strong>FILTER:</strong> FILTER(Ventas, Ventas[Total] > 1000)</li>
-    <li><strong>ALL:</strong> CALCULATE(SUM(Ventas[Total]), ALL(Ventas))</li>
-    <li><strong>ALLEXCEPT:</strong> CALCULATE(SUM(Ventas[Total]), ALLEXCEPT(Ventas, Ventas[Región]))</li>
-    <li><strong>VALUES:</strong> VALUES(Clientes[Ciudad])</li>
-  </ul>
-
-  <h3>🔗 Funciones de Relación</h3>
-  <ul>
-    <li><strong>RELATED:</strong> RELATED(Clientes[Nombre])</li>
-    <li><strong>RELATEDTABLE:</strong> RELATEDTABLE(Ventas)</li>
-    <li><strong>LOOKUPVALUE:</strong> LOOKUPVALUE(Clientes[Nombre], Clientes[ID], Ventas[ClienteID])</li>
-  </ul>
-
-  <h3>📅 Funciones de Fecha y Hora</h3>
-  <ul>
-    <li><strong>TODAY:</strong> TODAY()</li>
-    <li><strong>NOW:</strong> NOW()</li>
-    <li><strong>YEAR / MONTH / DAY:</strong> YEAR(Ventas[Fecha]) / MONTH(Ventas[Fecha]) / DAY(Ventas[Fecha])</li>
-    <li><strong>DATEDIFF:</strong> DATEDIFF(Clientes[Registro], TODAY(), DAY)</li>
-    <li><strong>EDATE:</strong> EDATE(Ventas[Fecha], 2)</li>
-  </ul>
-
-  <h3>📊 Funciones Estadísticas Básicas</h3>
-  <ul>
-    <li><strong>COUNT:</strong> COUNT(Ventas[ID])</li>
-    <li><strong>COUNTA:</strong> COUNTA(Clientes[Nombre])</li>
-    <li><strong>COUNTROWS:</strong> COUNTROWS(Ventas)</li>
-    <li><strong>DISTINCTCOUNT:</strong> DISTINCTCOUNT(Clientes[Ciudad])</li>
-    <li><strong>RANKX:</strong> RANKX(ALL(Clientes), SUM(Ventas[Total]))</li>
-  </ul>
-</section>
+    <h3>📊 Funciones Estadísticas Básicas</h3>
+    <ul>
+      <li><strong>CONTAR:</strong> =CONTAR(A1:A10)<em>Cuenta cuántas celdas contienen números en el rango.</em></li>
+      <li><strong>CONTAR.SI:</strong> =CONTAR.SI(A1:A10, ">5")<em>Cuenta cuántas celdas cumplen una condición.</em></li>
+      <li><strong>CONTAR.BLANK:</strong> =CONTAR.BLANK(A1:A10)<em>Cuenta cuántas celdas están vacías.</em></li>
+      <li><strong>FRECUENCIA:</strong> =FRECUENCIA(datos,intervalos)<em>Calcula la distribución de frecuencias en un conjunto de datos.</em></li>
+    </ul>
+  </section>
 
 
-  <script>
+    <script>
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
@@ -230,3 +177,4 @@
   </script>
 </body>
 </html>
+
