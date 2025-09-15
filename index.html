@@ -169,6 +169,77 @@
   </section>
 
 
+<section id="powerbi" class="section">
+  <h2>📈 Fórmulas más utilizadas en Power BI (DAX)</h2>
+  <p>Power BI utiliza el lenguaje DAX (Data Analysis Expressions) para crear cálculos personalizados. Aquí tienes las fórmulas más comunes, organizadas por categoría y con una breve descripción de su uso.</p>
+
+  <h3>🧮 Funciones de Agregación</h3>
+  <ul>
+    <li><strong>SUM:</strong> SUM(Ventas[Total])<em>Suma todos los valores de la columna Ventas[Total].</em></li>
+    <li><strong>SUMX:</strong> SUMX(Ventas, Ventas[Precio] * Ventas[Cantidad])<em>Realiza una suma iterativa multiplicando Precio por Cantidad en cada fila.</em></li>
+    <li><strong>AVERAGE:</strong> AVERAGE(Ventas[Total])<em>Calcula el promedio de los valores en Ventas[Total].</em></li>
+    <li><strong>AVERAGEX:</strong> AVERAGEX(Ventas, Ventas[Total])<em>Calcula el promedio evaluando cada fila individualmente.</em></li>
+    <li><strong>MAX / MIN:</strong> MAX(Ventas[Total]) / MIN(Ventas[Total])<em>Devuelve el valor máximo o mínimo de la columna.</em></li>
+  </ul>
+
+  <h3>🔤 Funciones de Texto</h3>
+  <ul>
+    <li><strong>CONCATENATE:</strong> CONCATENATE(Clientes[Nombre], " ", Clientes[Apellido])<em>Une el nombre y apellido en una sola cadena de texto.</em></li>
+    <li><strong>LEFT / RIGHT:</strong> LEFT(Clientes[Nombre], 3) / RIGHT(Clientes[Nombre], 2)<em>Extrae caracteres desde la izquierda o derecha del texto.</em></li>
+    <li><strong>LEN:</strong> LEN(Clientes[Nombre])<em>Devuelve la cantidad de caracteres en el nombre.</em></li>
+    <li><strong>UPPER / LOWER:</strong> UPPER(Clientes[Nombre]) / LOWER(Clientes[Nombre])<em>Convierte el texto a mayúsculas o minúsculas.</em></li>
+    <li><strong>REPLACE:</strong> REPLACE(Clientes[Nombre], 1, 3, "XXX")<em>Reemplaza parte del texto en la posición indicada.</em></li>
+  </ul>
+
+  <h3>🧠 Funciones Lógicas</h3>
+  <ul>
+    <li><strong>IF:</strong> IF(Ventas[Total] > 5000, "Alto", "Bajo")<em>Evalúa una condición y devuelve un resultado según sea verdadera o falsa.</em></li>
+    <li><strong>AND:</strong> AND(Ventas[Total] > 1000, Ventas[Cantidad] > 5)<em>Devuelve VERDADERO si ambas condiciones se cumplen.</em></li>
+    <li><strong>OR:</strong> OR(Ventas[Región] = "Norte", Ventas[Región] = "Sur")<em>Devuelve VERDADERO si al menos una condición se cumple.</em></li>
+    <li><strong>NOT:</strong> NOT(Ventas[Cantidad] > 10)<em>Invierte el resultado lógico de la condición.</em></li>
+    <li><strong>IFERROR:</strong> IFERROR(Ventas[Total] / Ventas[Cantidad], 0)<em>Devuelve 0 si la operación genera un error.</em></li>
+  </ul>
+
+  <h3>🔍 Funciones de Filtro y Contexto</h3>
+  <ul>
+    <li><strong>CALCULATE:</strong> CALCULATE(SUM(Ventas[Total]), Ventas[Región] = "Norte")<em>Modifica el contexto de cálculo para aplicar filtros.</em></li>
+    <li><strong>FILTER:</strong> FILTER(Ventas, Ventas[Total] > 1000)<em>Filtra la tabla Ventas según una condición.</em></li>
+    <li><strong>ALL:</strong> CALCULATE(SUM(Ventas[Total]), ALL(Ventas))<em>Elimina todos los filtros del contexto actual.</em></li>
+    <li><strong>ALLEXCEPT:</strong> CALCULATE(SUM(Ventas[Total]), ALLEXCEPT(Ventas, Ventas[Región]))<em>Elimina todos los filtros excepto los de la columna Región.</em></li>
+    <li><strong>VALUES:</strong> VALUES(Clientes[Ciudad])<em>Devuelve una lista de valores únicos en la columna Ciudad.</em></li>
+  </ul>
+
+  <h3>🔗 Funciones de Relación</h3>
+  <ul>
+    <li><strong>RELATED:</strong> RELATED(Clientes[Nombre])<em>Accede a una columna relacionada desde otra tabla.</em></li>
+    <li><strong>RELATEDTABLE:</strong> RELATEDTABLE(Ventas)<em>Devuelve una tabla relacionada con la fila actual.</em></li>
+    <li><strong>LOOKUPVALUE:</strong> LOOKUPVALUE(Clientes[Nombre], Clientes[ID], Ventas[ClienteID])<em>Busca un valor en otra tabla según una coincidencia.</em></li>
+  </ul>
+
+  <h3>📅 Funciones de Fecha y Hora</h3>
+  <ul>
+    <li><strong>TODAY:</strong> TODAY()<em>Devuelve la fecha actual.</em></li>
+    <li><strong>NOW:</strong> NOW()<em>Devuelve la fecha y hora actual.</em></li>
+    <li><strong>YEAR / MONTH / DAY:</strong> YEAR(Ventas[Fecha]) / MONTH(Ventas[Fecha]) / DAY(Ventas[Fecha])<em>Extrae el año, mes o día de una fecha.</em></li>
+    <li><strong>DATEDIFF:</strong> DATEDIFF(Clientes[Registro], TODAY(), DAY)<em>Calcula la diferencia entre dos fechas en días.</em></li>
+    <li><strong>EDATE:</strong> EDATE(Ventas[Fecha], 2)<em>Devuelve una fecha desplazada dos meses adelante.</em></li>
+  </ul>
+
+  <h3>📊 Funciones Estadísticas Básicas</h3>
+  <ul>
+    <li><strong>COUNT:</strong> COUNT(Ventas[ID])<em>Cuenta cuántos valores hay en la columna ID.</em></li>
+    <li><strong>COUNTA:</strong> COUNTA(Clientes[Nombre])<em>Cuenta cuántas celdas no están vacías.</em></li>
+    <li><strong>COUNTROWS:</strong> COUNTROWS(Ventas)<em>Cuenta el número de filas en la tabla Ventas.</em></li>
+    <li><strong>DISTINCTCOUNT:</strong> DISTINCTCOUNT(Clientes[Ciudad])<em>Cuenta cuántos valores únicos hay en la columna Ciudad.</em></li>
+    <li><strong>RANKX:</strong> RANKX(ALL(Clientes), SUM(Ventas[Total]))<em>Asigna un ranking basado en el total de ventas.</em></li>
+  </ul>
+</section>
+
+
+
+
+
+  
     <script>
     function showSection(id) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
