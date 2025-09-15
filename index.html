@@ -155,17 +155,72 @@
   </ul>
 </section>
 
-  <section id="powerbi" class="section">
-    <h2>📈 Fórmulas más utilizadas en Power BI (DAX)</h2>
-    <p>Power BI te permite crear dashboards interactivos y realizar análisis avanzados. Estas son algunas fórmulas DAX esenciales:</p>
-    <ul>
-      <li><strong>CALCULATE:</strong> CALCULATE(SUM(Ventas[Total]), Ventas[Región] = "Norte")</li>
-      <li><strong>FILTER:</strong> FILTER(Ventas, Ventas[Total] > 1000)</li>
-      <li><strong>SUMX:</strong> SUMX(Ventas, Ventas[Precio] * Ventas[Cantidad])</li>
-      <li><strong>RELATED:</strong> RELATED(Clientes[Nombre])</li>
-      <li><strong>IF:</strong> IF(Ventas[Total] > 5000, "Alto", "Bajo")</li>
-    </ul>
-  </section>
+ <section id="powerbi" class="section">
+  <h2>📈 Fórmulas más utilizadas en Power BI (DAX)</h2>
+  <p>Power BI te permite crear dashboards interactivos y realizar análisis avanzados. Estas son algunas de las fórmulas DAX más comunes, organizadas por categoría:</p>
+
+  <h3>🧮 Funciones de Agregación</h3>
+  <ul>
+    <li><strong>SUM:</strong> SUM(Ventas[Total])</li>
+    <li><strong>SUMX:</strong> SUMX(Ventas, Ventas[Precio] * Ventas[Cantidad])</li>
+    <li><strong>AVERAGE:</strong> AVERAGE(Ventas[Total])</li>
+    <li><strong>AVERAGEX:</strong> AVERAGEX(Ventas, Ventas[Total])</li>
+    <li><strong>MAX / MIN:</strong> MAX(Ventas[Total]) / MIN(Ventas[Total])</li>
+  </ul>
+
+  <h3>🔤 Funciones de Texto</h3>
+  <ul>
+    <li><strong>CONCATENATE:</strong> CONCATENATE(Clientes[Nombre], " ", Clientes[Apellido])</li>
+    <li><strong>LEFT / RIGHT:</strong> LEFT(Clientes[Nombre], 3) / RIGHT(Clientes[Nombre], 2)</li>
+    <li><strong>LEN:</strong> LEN(Clientes[Nombre])</li>
+    <li><strong>UPPER / LOWER:</strong> UPPER(Clientes[Nombre]) / LOWER(Clientes[Nombre])</li>
+    <li><strong>REPLACE:</strong> REPLACE(Clientes[Nombre], 1, 3, "XXX")</li>
+  </ul>
+
+  <h3>🧠 Funciones Lógicas</h3>
+  <ul>
+    <li><strong>IF:</strong> IF(Ventas[Total] > 5000, "Alto", "Bajo")</li>
+    <li><strong>AND:</strong> AND(Ventas[Total] > 1000, Ventas[Cantidad] > 5)</li>
+    <li><strong>OR:</strong> OR(Ventas[Región] = "Norte", Ventas[Región] = "Sur")</li>
+    <li><strong>NOT:</strong> NOT(Ventas[Cantidad] > 10)</li>
+    <li><strong>IFERROR:</strong> IFERROR(Ventas[Total] / Ventas[Cantidad], 0)</li>
+  </ul>
+
+  <h3>🔍 Funciones de Filtro y Contexto</h3>
+  <ul>
+    <li><strong>CALCULATE:</strong> CALCULATE(SUM(Ventas[Total]), Ventas[Región] = "Norte")</li>
+    <li><strong>FILTER:</strong> FILTER(Ventas, Ventas[Total] > 1000)</li>
+    <li><strong>ALL:</strong> CALCULATE(SUM(Ventas[Total]), ALL(Ventas))</li>
+    <li><strong>ALLEXCEPT:</strong> CALCULATE(SUM(Ventas[Total]), ALLEXCEPT(Ventas, Ventas[Región]))</li>
+    <li><strong>VALUES:</strong> VALUES(Clientes[Ciudad])</li>
+  </ul>
+
+  <h3>🔗 Funciones de Relación</h3>
+  <ul>
+    <li><strong>RELATED:</strong> RELATED(Clientes[Nombre])</li>
+    <li><strong>RELATEDTABLE:</strong> RELATEDTABLE(Ventas)</li>
+    <li><strong>LOOKUPVALUE:</strong> LOOKUPVALUE(Clientes[Nombre], Clientes[ID], Ventas[ClienteID])</li>
+  </ul>
+
+  <h3>📅 Funciones de Fecha y Hora</h3>
+  <ul>
+    <li><strong>TODAY:</strong> TODAY()</li>
+    <li><strong>NOW:</strong> NOW()</li>
+    <li><strong>YEAR / MONTH / DAY:</strong> YEAR(Ventas[Fecha]) / MONTH(Ventas[Fecha]) / DAY(Ventas[Fecha])</li>
+    <li><strong>DATEDIFF:</strong> DATEDIFF(Clientes[Registro], TODAY(), DAY)</li>
+    <li><strong>EDATE:</strong> EDATE(Ventas[Fecha], 2)</li>
+  </ul>
+
+  <h3>📊 Funciones Estadísticas Básicas</h3>
+  <ul>
+    <li><strong>COUNT:</strong> COUNT(Ventas[ID])</li>
+    <li><strong>COUNTA:</strong> COUNTA(Clientes[Nombre])</li>
+    <li><strong>COUNTROWS:</strong> COUNTROWS(Ventas)</li>
+    <li><strong>DISTINCTCOUNT:</strong> DISTINCTCOUNT(Clientes[Ciudad])</li>
+    <li><strong>RANKX:</strong> RANKX(ALL(Clientes), SUM(Ventas[Total]))</li>
+  </ul>
+</section>
+
 
   <script>
     function showSection(id) {
