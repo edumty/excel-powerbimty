@@ -93,14 +93,6 @@
     <p>Este sitio está diseñado para ayudarte a dominar las herramientas de Excel y Power BI desde cero. Ideal para quienes están comenzando en el mundo del análisis de datos.</p>
   </header>
 
-<div style="text-align: center; margin: 1rem 0;">
-  <a href="https://wa.me/528120951478" target="_blank" style="display: inline-flex; align-items: center; background-color: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 24px; height: 24px; margin-right: 10px;" />
-    Contáctame por WhatsApp: 8120951478
-  </a>
-</div>
-
-
 
   
   <nav>
@@ -275,6 +267,41 @@
   };
 </script>
 
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/528120951478" target="_blank" id="whatsapp-button" title="Contáctame por WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+<style>
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  #whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+
+  #whatsapp-button img {
+    width: 30px;
+    height: 30px;
+  }
+</style>
+
+
+
+  
 
 </body>
 </html>
