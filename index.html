@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel & Power BI para Principiantes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #34495e;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background: #1abc9c;
+    }
+
+    .section {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: #ecf0f1;
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      border-left: 5px solid #1abc9c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Excel & Power BI para Principiantes</h1>
+    <p>Este sitio está diseñado para ayudarte a dominar las herramientas de Excel y Power BI desde cero. Ideal para quienes están comenzando en el mundo del análisis de datos.</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('excel')">Excel</button>
+    <button onclick="showSection('powerbi')">Power BI</button>
+  </nav>
+
+  <section id="excel" class="section active">
+    <h2>📊 Fórmulas más utilizadas en Excel</h2>
+    <p>Excel es una herramienta poderosa para organizar, analizar y visualizar datos. Aquí tienes algunas de las fórmulas más comunes:</p>
+    <ul>
+      <li><strong>SUMA:</strong> =SUMA(A1:A10)</li>
+      <li><strong>SI:</strong> =SI(A1>10, "Mayor", "Menor")</li>
+      <li><strong>BUSCARV:</strong> =BUSCARV("Producto", A2:B10, 2, FALSO)</li>
+      <li><strong>CONCATENAR:</strong> =CONCATENAR(A1, " ", B1)</li>
+      <li><strong>CONTAR.SI:</strong> =CONTAR.SI(A1:A10, ">5")</li>
+    </ul>
+  </section>
+
+  <section id="powerbi" class="section">
+    <h2>📈 Fórmulas más utilizadas en Power BI (DAX)</h2>
+    <p>Power BI te permite crear dashboards interactivos y realizar análisis avanzados. Estas son algunas fórmulas DAX esenciales:</p>
+    <ul>
+      <li><strong>CALCULATE:</strong> CALCULATE(SUM(Ventas[Total]), Ventas[Región] = "Norte")</li>
+      <li><strong>FILTER:</strong> FILTER(Ventas, Ventas[Total] > 1000)</li>
+      <li><strong>SUMX:</strong> SUMX(Ventas, Ventas[Precio] * Ventas[Cantidad])</li>
+      <li><strong>RELATED:</strong> RELATED(Clientes[Nombre])</li>
+      <li><strong>IF:</strong> IF(Ventas[Total] > 5000, "Alto", "Bajo")</li>
+    </ul>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
