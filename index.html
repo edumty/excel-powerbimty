@@ -358,51 +358,7 @@
 </style>
 
 
-<section id="comentarios" style="margin-top: 40px;">
-  <h2>🗨️ Comentarios</h2>
-  <form id="formulario-comentario">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
 
-    <label for="comentario">Comentario:</label><br>
-    <textarea id="comentario" name="comentario" rows="4" required></textarea><br><br>
-
-    <button type="submit">Enviar Comentario</button>
-  </form>
-
-  <div id="lista-comentarios">
-    <h3>Comentarios Recientes:</h3>
-    <ul id="comentarios-ul"></ul>
-  </div>
-</section>
-
-<script>
-  const esAdmin = true; // Cambia a false si no quieres mostrar los botones
-  const formulario = document.getElementById('formulario-comentario');
-  const listaComentarios = document.getElementById('comentarios-ul');
-
-  formulario.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value;
-    const comentario = document.getElementById('comentario').value;
-
-    const nuevoComentario = document.createElement('li');
-    nuevoComentario.innerHTML = `<strong>${nombre}:</strong> ${comentario}`;
-
-    if (esAdmin) {
-      const btnEliminar = document.createElement('button');
-      btnEliminar.textContent = 'Eliminar';
-      btnEliminar.classList.add('eliminar');
-      btnEliminar.onclick = () => nuevoComentario.remove();
-      nuevoComentario.appendChild(btnEliminar);
-    }
-
-    listaComentarios.appendChild(nuevoComentario);
-    formulario.reset();
-  });
-</script>
-
-  
 
 </body>
 </html>
