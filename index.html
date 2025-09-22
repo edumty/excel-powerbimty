@@ -417,17 +417,20 @@
 <script>
   // Configuración de Firebase
   const firebaseConfig = {
-    apiKey: "AIzaSyD...TU_API_KEY", // ← Reemplaza con tu API Key real
+    apiKey: "AIzaSyBmHYJnaz0bOy33bIv4y2XPi90G5aAH_KY",
     authDomain: "excel-powerbi-comentarios.firebaseapp.com",
-    databaseURL: "https://excel-powerbi-comentarios-default-rtdb.firebaseio.com/",
+    databaseURL: "https://excel-powerbi-comentarios-default-rtdb.firebaseio.com",
     projectId: "excel-powerbi-comentarios",
-    storageBucket: "excel-powerbi-comentarios.appspot.com",
-    messagingSenderId: "TU_MESSAGING_ID",
-    appId: "TU_APP_ID"
+    storageBucket: "excel-powerbi-comentarios.firebasestorage.app",
+    messagingSenderId: "445935393582",
+    appId: "1:445935393582:web:d5bdf7e4acb515058f38bf"
   };
 
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
+
+  // Clave secreta para eliminar comentarios (solo tú la conoces)
+  const claveAdmin = "eliminar123"; // ← Puedes cambiarla por la que tú quieras
 
   // Mostrar comentarios
   function cargarComentariosFirebase() {
@@ -443,6 +446,27 @@
         li.style.margin = '0.5rem 0';
         li.style.padding = '0.75rem';
         li.style.borderLeft = '5px solid #1abc9c';
+
+        // Botón de eliminar (solo visible si ingresas la clave)
+        const btn = document.createElement('button');
+        btn.textContent = 'Eliminar';
+        btn.style.marginLeft = '1rem';
+        btn.style.background = '#e74c3c';
+        btn.style.color = 'white';
+        btn.style.border = 'none';
+        btn.style.padding = '0.3rem 0.6rem';
+        btn.style.cursor = 'pointer';
+        btn.style.borderRadius = '4px';
+        btn.onclick = function() {
+          const clave = prompt("Ingresa tu clave para eliminar:");
+          if (clave === claveAdmin) {
+            db.ref('comentarios/' + id).remove();
+          } else {
+            alert("Clave incorrecta. No tienes permiso para eliminar.");
+          }
+        };
+
+        li.appendChild(btn);
         lista.appendChild(li);
       }
     });
@@ -467,6 +491,7 @@
     cargarComentariosFirebase();
   };
 </script>
+
 
 
 </body>
