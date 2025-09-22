@@ -410,6 +410,63 @@
 </style>
 
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Configuración de Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyD...TU_API_KEY", // ← Reemplaza con tu API Key real
+    authDomain: "excel-powerbi-comentarios.firebaseapp.com",
+    databaseURL: "https://excel-powerbi-comentarios-default-rtdb.firebaseio.com/",
+    projectId: "excel-powerbi-comentarios",
+    storageBucket: "excel-powerbi-comentarios.appspot.com",
+    messagingSenderId: "TU_MESSAGING_ID",
+    appId: "TU_APP_ID"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Mostrar comentarios
+  function cargarComentariosFirebase() {
+    const lista = document.getElementById('lista-comentarios');
+    lista.innerHTML = '';
+    db.ref('comentarios').on('value', snapshot => {
+      const datos = snapshot.val();
+      for (let id in datos) {
+        const c = datos[id];
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${c.nombre}:</strong> ${c.mensaje}`;
+        li.style.background = '#ecf0f1';
+        li.style.margin = '0.5rem 0';
+        li.style.padding = '0.75rem';
+        li.style.borderLeft = '5px solid #1abc9c';
+        lista.appendChild(li);
+      }
+    });
+  }
+
+  // Guardar nuevo comentario
+  document.getElementById('comentario-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    if (nombre && mensaje) {
+      db.ref('comentarios').push({ nombre, mensaje });
+      document.getElementById('comentario-form').reset();
+    }
+  });
+
+  // Cargar al entrar
+  window.onload = function() {
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    cargarComentariosFirebase();
+  };
+</script>
 
 
 </body>
